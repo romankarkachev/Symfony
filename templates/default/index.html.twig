@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+
+<title>Добро пожаловать</title>
+
+{% block body %}
+    <h1>Выберите интересующий раздел</h1>
+
+    <ul>
+        <li><a href="{{ path('authors_index') }}">Авторы &rarr;</a></li>
+        <li><a href="{{ path('articles_index') }}">Все статьи &rarr;</a></li>
+        <li><a href="{{ path('articles_by_author') }}">Авторские статьи &rarr;</a></li>
+        <li><a href="{{ path('articles_by_tag') }}">Статьи по тэгу &rarr;</a></li>
+    </ul>
+{% endblock %}

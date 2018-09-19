@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+
+<title>Редактирование автора</title>
+
+{% block body %}
+    <h1>Изменение автора &laquo;{{ author.name }}&raquo;</h1>
+
+    {{ include('author/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('authors_index') }}">&larr; Вернуться в список авторов</a>
+
+    {{ include('author/_delete_form.html.twig') }}
+{% endblock %}

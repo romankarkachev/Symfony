@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<title>Авторы статей</title>
+
+{% block body %}
+    <h1>Авторы статей</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Имя</th>
+                <th>действия</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for author in authors %}
+            <tr>
+                <td>{{ author.id }}</td>
+                <td>{{ author.name }}</td>
+                <td>
+                    <a href="{{ path('author_show', {'id': author.id}) }}">просмотр</a>
+                    <a href="{{ path('author_edit', {'id': author.id}) }}">изменить</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">записей нет</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('default_index') }}">&larr; На главную</a>
+    <a href="{{ path('author_new') }}">Новый автор &rarr;</a>
+{% endblock %}

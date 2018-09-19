@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+
+<title>Создание статьи</title>
+
+{% block body %}
+    <h1>Создание новой статьи</h1>
+
+    {{ include('article/_form.html.twig') }}
+
+    <a href="{{ path('articles_index') }}">&larr; Вернуться в список статей</a>
+{% endblock %}
